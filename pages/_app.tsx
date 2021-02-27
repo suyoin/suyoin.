@@ -1,6 +1,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
 import { AnimateSharedLayout } from "framer-motion";
+import NavigationBar from "../components/Topbar";
 
 function MyApp({ Component, pageProps }) {
 	return (
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
 				<meta property="og:description" content="the place" />
 				<meta name="theme-color" content="#FF6262" />
 			</Head>
+			<NavigationBar />
 			<AnimateSharedLayout>
 				<Component {...pageProps} />
 			</AnimateSharedLayout>

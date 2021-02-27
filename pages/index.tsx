@@ -1,10 +1,18 @@
 import { motion } from "framer-motion";
+import Playground from "../components/pages/Playground";
 import getSubdomain from "../util/getSubdomain";
 
-export default function Home() {
+export default function IndexPage({ subdomain }): React.ReactElement {
+	if (subdomain) {
+		switch (subdomain) {
+			case "playground":
+				return <Playground />;
+		}
+	}
+
 	return (
 		<>
-			<div className="flex flex-col w-screen h-screen space-y-1 items-center justify-center">
+			<div className="flex flex-col w-screen after-nav-bar space-y-1 items-center justify-center">
 				<motion.div
 					initial={{ opacity: 0.5, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
@@ -36,5 +44,9 @@ export default function Home() {
 export function getServerSideProps({ req, res }) {
 	const { subdomain } = getSubdomain(req);
 
-	return { props: { subdomain } };
+	if (subdomain) {
+		return { props: { subdomain } };
+	}
+
+	return { props: {} };
 }

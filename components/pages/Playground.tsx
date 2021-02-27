@@ -30,7 +30,7 @@ const Playground = (): React.ReactElement => {
 	const editorDidMount: OnMount = (editor, monaco) => {
 		loader.init().then((monaco) => {
 			let options = monaco.languages.typescript.typescriptDefaults.getCompilerOptions();
-			options.noLib = true;
+			options.lib = ["dom", "dom.iterable", "esnext"];
 			options.strict = true;
 			options.jsx = monaco.languages.typescript.JsxEmit.React;
 			monaco.languages.typescript.typescriptDefaults.setCompilerOptions(

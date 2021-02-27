@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const NotFound = () => {
 	return (
 		<motion.div
-			className="w-screen h-screen flex flex-col justify-center space-y-10 items-center"
+			className="w-screen after-nav-bar flex flex-col justify-center space-y-5 items-center"
 			initial={{ opacity: 0.5, scale: 0.9 }}
 			animate={{ opacity: 1, scale: 1 }}
 			transition={{ duration: 0.3 }}
@@ -22,7 +22,7 @@ const NotFound = () => {
 				</p>
 			</div>
 			<Link href="/">
-				<a className="font-semibold rounded-full border-2 border-red-500 bg-opacity-0 text-red-500 transition duration-300 ease-out bg-red-500 hover:bg-opacity-100 hover:text-gray-800 text-1xl px-6 py-2">
+				<a className="font-semibold rounded-lg border-2 border-red-500 bg-opacity-0 text-red-500 transition duration-300 ease-out bg-red-500 hover:bg-opacity-100 hover:text-gray-800 text-1xl px-7 py-1">
 					Back
 				</a>
 			</Link>

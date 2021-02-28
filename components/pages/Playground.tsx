@@ -4,6 +4,7 @@ import prettier from "prettier";
 import parserTypeScript from "prettier/parser-typescript";
 import { useEffect, useState } from "react";
 import { getCodeFromHash, getHashFromCode } from "../../util/hashCode";
+import NavigationBar from "../NavigationBar";
 
 const Playground = (): React.ReactElement => {
 	const [input, setInput] = useState("");
@@ -88,20 +89,23 @@ const Playground = (): React.ReactElement => {
 	}, [input, inputModel]);
 
 	return (
-		<div className="after-nav-bar">
-			<div className="editor-container w-full h-full">
-				<Editor
-					language="typescript"
-					options={{
-						minimap: { enabled: true },
-						scrollbar: { useShadows: false },
-						scrollBeyondLastLine: false,
-					}}
-					theme="vs-dark"
-					onMount={editorDidMount}
-				/>
+		<>
+			<NavigationBar current="playground" />
+			<div className="after-nav-bar">
+				<div className="editor-container w-full h-full">
+					<Editor
+						language="typescript"
+						options={{
+							minimap: { enabled: true },
+							scrollbar: { useShadows: false },
+							scrollBeyondLastLine: false,
+						}}
+						theme="vs-dark"
+						onMount={editorDidMount}
+					/>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

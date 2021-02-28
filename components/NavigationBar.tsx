@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { useRouter, withRouter } from "next/router";
-import { useEffect } from "react";
 import pageList from "../util/pageList";
 
 const NavigationBar = ({ current }: { current: string }) => {

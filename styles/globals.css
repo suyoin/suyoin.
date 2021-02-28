@@ -44,6 +44,10 @@
 .monaco-editor .rename-box {
 	top: 0;
 }
+.monaco-editor.rename-box,
+.monaco-hover {
+	top: 0;
+}
 
 body {
 	@apply bg-gray-900;

@@ -46,7 +46,8 @@
 }
 
 body {
-	background-color: rgb(30, 32, 36);
+	@apply bg-gray-900;
+	@apply text-gray-200;
 }
 
 html,
